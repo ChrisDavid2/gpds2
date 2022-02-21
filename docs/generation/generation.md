@@ -13,7 +13,7 @@ permalink: docs/generation
 Brief description of the types of generations that will be covered.
 {: .fs-6 .fw-300 }
 
-## Table of contents
+<!-- ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
@@ -44,4 +44,4 @@ Explanatory text
 ## Reconstructions
 Explanatory text
 
---
+-- -->
