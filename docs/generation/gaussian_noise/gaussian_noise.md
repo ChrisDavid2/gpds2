@@ -2,7 +2,7 @@
 layout: default
 title: Gaussian Noise
 parent: Generation
-nav_order: 1
+nav_order: 3
 ---
 
 # Gaussian Noise

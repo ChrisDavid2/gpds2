@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Reconstructions
+title: Reconstruction
 parent: Generation
 nav_order: 5
 ---
 
-# Reconstructions
+# Reconstruction
 {: .no_toc }
 
 Topic text
