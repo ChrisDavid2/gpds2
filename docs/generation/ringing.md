@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 # Ringing
-{: .no_toc }
+<!-- {: .no_toc } -->
 ![Ringing](ringing/ringing.png)
 
 The ringing artifact also known as Gibbs artifact or truncation artifact refers to a series of lines parallel to abrupt and intense changes to an object, in our case especially around the brain skull.
