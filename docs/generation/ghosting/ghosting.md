@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ghosting
-parent: Generation
+parent: Artifact Generation
 nav_order: 4
 ---
 

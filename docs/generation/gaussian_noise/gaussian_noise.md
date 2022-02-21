@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Gaussian Noise
-parent: Generation
+parent: Artifact Generation
 nav_order: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blurring
-parent: Generation
+parent: Artifact Generation
 nav_order: 1
 ---
 

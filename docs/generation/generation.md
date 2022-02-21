@@ -9,6 +9,7 @@ permalink: docs/generation
 
 # Artifacts
 
+
 <!-- Brief description of the types of generations that will be covered.
 {: .fs-6 .fw-300 } -->
 

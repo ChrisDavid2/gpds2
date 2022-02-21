@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contrast
-parent: Generation
+parent: Artifact Generation
 nav_order: 2
 ---
 

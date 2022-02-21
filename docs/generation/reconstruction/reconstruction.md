@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Reconstruction
-parent: Generation
+parent: Artifact Generation
 nav_order: 5
 ---
 

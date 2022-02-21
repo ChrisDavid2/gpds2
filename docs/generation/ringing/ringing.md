@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ringing
-parent: Generation
+parent: Artifact Generation
 nav_order: 6
 ---
 
