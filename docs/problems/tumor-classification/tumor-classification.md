@@ -160,3 +160,4 @@ We repeated this test process to every artifact with each of the 10 degradation 
 
 Comentar sobre os resultados acima e adicionar os outros.
 Explicar melhor a arquitetura.
+
