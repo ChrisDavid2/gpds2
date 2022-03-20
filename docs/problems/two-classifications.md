@@ -33,8 +33,6 @@ To identify if an image has a tumor, we used a CNN-based classification system. 
 | Train     | 3199 | 3272 | **6471**|
 | Test      | 800 | 828 | **1628** |
 
-The results are presented in the next section.
-
 ## 4. RESULTS
 
 ### 4.1 Original Images
