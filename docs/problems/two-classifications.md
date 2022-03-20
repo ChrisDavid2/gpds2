@@ -29,6 +29,19 @@ The results for classifying the existence or not of a tumor are given by the tab
 
 ![Results_Original](https://user-images.githubusercontent.com/43020938/154950112-37b25b78-1bda-4d0a-8df7-731b9cc31dc2.PNG)
 
+|  | **Accuracy**  | **Precision** | **F1 score** | **Recall** |
+| -----------      | ----  | ----  | ----  | ---- |
+| **Mean**         | 1 | 1 | 1 |  1 |
+| **Std**          | 2 | 2 | 2 |  2 |
+
+
+| Type | Number of patients |
+| -----------       | ----  |
+| Meningioma        | 82    |
+| Glioma            | 89    |
+| Pituitary tumor   | 62    |
+| **Total**         |**233**|
+
 ![CM_original_images](https://user-images.githubusercontent.com/43020938/154949534-c08ef5a1-de39-42b3-8aea-6e8b46fae8f4.png)
 
  In Figure [2], the heatmap of an image sample indicates the most discriminative parts used by the resnet18 for classification. The areas with red color were the ones that had the greatest weight in the network decision and the areas closest to blue were the least significant regions.
