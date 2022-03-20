@@ -27,20 +27,10 @@ To identify if an image has a tumor, we used a CNN-based classification system. 
 ### 4.1 Original Images
 The results for classifying the existence or not of a tumor are given by the table and by the confusion matrix, Figure [1], shown below:
 
-![Results_Original](https://user-images.githubusercontent.com/43020938/154950112-37b25b78-1bda-4d0a-8df7-731b9cc31dc2.PNG)
-
 |  | **Accuracy**  | **Precision** | **F1 score** | **Recall** |
 | -----------      | ----  | ----  | ----  | ---- |
-| **Mean**         | 1 | 1 | 1 |  1 |
-| **Std**          | 2 | 2 | 2 |  2 |
-
-
-| Type | Number of patients |
-| -----------       | ----  |
-| Meningioma        | 82    |
-| Glioma            | 89    |
-| Pituitary tumor   | 62    |
-| **Total**         |**233**|
+| **Mean**         | 0.8944 | 0.8882 | 0.8952 |  0.9027 |
+| **Std**          | 0.0078 | 0.0090 | 0.0084 |  0.0174 |
 
 ![CM_original_images](https://user-images.githubusercontent.com/43020938/154949534-c08ef5a1-de39-42b3-8aea-6e8b46fae8f4.png)
 
