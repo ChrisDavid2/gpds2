@@ -108,7 +108,12 @@ The following table contains the classification results after adding ghosting ef
 
 
 
+## 5 References
 
+[1]
+[2]
+[3]
+[4]
 
 
 
