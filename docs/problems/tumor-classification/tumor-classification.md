@@ -194,3 +194,10 @@ Once again, we repeated this test process to every artifact with each of the 10 
 ![all_deg](images/results/accXdeglevel_all_deg.png)
 
 We can see that by being exposed to all the degradations, the model was able to maintain much higher accuracy. The highest levels were still impactful, but less than what we've seen before.
+
+## References
+
+[1]
+[2]
+[3]
+[4]
