@@ -28,6 +28,10 @@ The next image shows some examples:
 
 ![DatasetSample](https://user-images.githubusercontent.com/43020938/159187301-9840581a-2006-4eb2-b7b2-a08ea7c0a520.png)
 
+The labels distribution are shown below:
+
+![LabelsDistribution](https://user-images.githubusercontent.com/43020938/160255453-9d1a3a6c-d16c-4985-b213-4944eef0811c.png)
+
 ## 3. CNN BRAIN TUMOR DETECTION MODEL
 
 To identify if an image has a tumor, we used a CNN-based classification system. More specifically, we considered the Resnet18 architecture. While training the architecture, we used the cross-entropy as the loss function and Adam as the optimizer. We considered batches of 64 sub-images with a default *learning rate* of 0.002. All evaluated architectures were pre-trained, using weights imported from the *Imagenet* dataset. The last layer of the network was trained using the BRATS2020 dataset (for a dataset description, see Section 2.1. To perform this training, we used 80% of the images for training and 20% of the images used for test. As mentioned earlier, each of these subsets contains approximately 50% of the images with tumors and the remaining 50% of the images without tumors. The patients from the training set were different from those in test set. To avoid any bias in the dataset split, a 𝑘 -fold was used with 𝑘 = 10. The summary of the dataset split is shown below:
