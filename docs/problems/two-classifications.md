@@ -16,7 +16,7 @@ The process of diagnosing brain tumors from magnetic resonance imaging (MRI) is 
 ## 2. MATERIALS AND METHODS
 ### 2.1 BRATS2020 Dataset
 
-We conducted our experiments using the data available in the Multimodal Brain Tumor Segmentation Challenge 2020 (BRATS2020) dataset [17]. [The BRATS2020 dataset](https://www.med.upenn.edu/cbica/brats2020/data.html) has images of MRI scans and describe a) native (T1), b) post-contrast T1-weighted (T1Gd), c) T2-weighted (T2), and d) T2 Fluid Attenuated Inversion Recovery (T2-FLAIR) volumes. The images were acquired from 371 patients, using diff erent clinical protocols and various scanners from 19 institutions. For each patient, there are four MRI 3D scans. The images have been manually segmented, by one to four raters, following the same annotation protocol. Annotations comprise the GD-enhancing tumor (ET — label 4), the peritumoral edema (ED — label 2), and the necrotic and non-enhancing tumor core (NCR/NET — label 1). In the present study, 8,099 axial 2D MRI slices were extracted from the 3D MRI flair images. The slices were randomly extracted and the masks were used only to indicate the presence of a brain tumor in each slice. Among the 8,099 2D MRI scans, 3,999 scans (49.4%) contain tumors and 50.6% do not, providing a balanced dataset. The patients distribution is shown bellow:
+We conducted our experiments using the data available in the Multimodal Brain Tumor Segmentation Challenge 2020 (BRATS2020) dataset [2]. [The BRATS2020 dataset](https://www.med.upenn.edu/cbica/brats2020/data.html) has images of MRI scans and describe a) native (T1), b) post-contrast T1-weighted (T1Gd), c) T2-weighted (T2), and d) T2 Fluid Attenuated Inversion Recovery (T2-FLAIR) volumes. The images were acquired from 371 patients, using diff erent clinical protocols and various scanners from 19 institutions. For each patient, there are four MRI 3D scans. The images have been manually segmented, by one to four raters, following the same annotation protocol. Annotations comprise the GD-enhancing tumor (ET — label 4), the peritumoral edema (ED — label 2), and the necrotic and non-enhancing tumor core (NCR/NET — label 1). In the present study, 8,099 axial 2D MRI slices were extracted from the 3D MRI flair images. The slices were randomly extracted and the masks were used only to indicate the presence of a brain tumor in each slice. Among the 8,099 2D MRI scans, 3,999 scans (49.4%) contain tumors and 50.6% do not, providing a balanced dataset. The patients distribution is shown bellow:
 
 | Type | Number of patients |
 | -----------       | ----  |
@@ -34,14 +34,30 @@ The labels distribution are shown below:
 
 ## 3. CNN BRAIN TUMOR DETECTION MODEL
 
-To identify if an image has a tumor, we used a CNN-based classification system. More specifically, we considered the Resnet18 architecture. While training the architecture, we used the cross-entropy as the loss function and Adam as the optimizer. We considered batches of 64 sub-images with a default *learning rate* of 0.002. All evaluated architectures were pre-trained, using weights imported from the *Imagenet* dataset. The last layer of the network was trained using the BRATS2020 dataset (for a dataset description, see Section 2.1. To perform this training, we used 80% of the images for training and 20% of the images used for test. As mentioned earlier, each of these subsets contains approximately 50% of the images with tumors and the remaining 50% of the images without tumors. The patients from the training set were different from those in test set. To avoid any bias in the dataset split, a 𝑘 -fold was used with 𝑘 = 10. The summary of the dataset split is shown below:
+To identify if an image has a tumor, we used a CNN-based classification system. More specifically, we considered the Resnet34 architecture. While training the architecture, we used the cross-entropy as the loss function and Adam as the optimizer. We considered batches of 64 sub-images with a default *learning rate* of 0.002. All evaluated architectures were pre-trained, using weights imported from the *Imagenet* dataset. The last layer of the network was trained using the BRATS2020 dataset (for a dataset description, see Section 2.1. To perform this training, we used 80% of the images for training and 20% of the images used for test. As mentioned earlier, each of these subsets contains approximately 50% of the images with tumors and the remaining 50% of the images without tumors. The patients from the training set were different from those in test set. To avoid any bias in the dataset split, a 𝑘 -fold was used with 𝑘 = 10. The summary of the dataset split is shown below:
 
 | Split     | Tumor | Non Tumor | Total |
 | :-:       |  :-:  |     :-:   | :-:   |
 | Train     | 3199 | 3272 | **6471**|
 | Test      | 800 | 828 | **1628** |
 
+We created the model using fastai libraries that use Pytorch. Fastai allows the creation and testing of neural network models fastly
+because it abstracts various complexities from Pytorch. The definition of the neural network model is done in the creation of the dataloader, as shown below:
+
+	```
+  dls_train = ImageDataLoaders.from_df(pd_train, path=path,valid_col='is_valid', seed=42,label_col=1)
+  learn = cnn_learner(dls_train, resnet34, metrics=error_rate)
+
+	```
+
 ## 4. RESULTS
+
+In this study, we simulated the introduction of some artifacts that may be present in magnetic resonance images , such as:
+gaussian noise, blurring, ringing, ghosting and contrast. For each type of artifact, we tested 20 degradation levels numbered
+from 1 to 20. The level 1 is the smoothest and level 20 is the most severe. Then we classified the test images with each of the degraded levels. 
+The model previously trained with non-degraded images and the classification results (accuracy, precision, f1_score and recall) 
+are shown in the following sections. The PSNR and MSE values of each degradation level correspond to the average of the MSE and PSNR values
+of each degraded image in the test set.
 
 ### 4.1 Original Images
 The results for classifying the existence or not of a tumor are given by the table and by the confusion matrix, Figure [1], shown below:
@@ -114,10 +130,9 @@ The following table contains the classification results after adding ghosting ef
 
 ## 5 References
 
-[1]
-[2]
-[3]
-[4]
+[1] Using a Saliency-Driven Convolutional Neural Network Framework for Brain Tumor Detection
+[2] “Multimodal brain tumor segmentation challenge 2020: Data,” https://www.med.upenn.edu/cbica/brats2020/data.html,
+accessed: 2022-01-01.
 
 
 
