@@ -41,14 +41,14 @@ To identify if an image has a tumor, we used a CNN-based classification system. 
 | Train     | 3199 | 3272 | **6471**|
 | Test      | 800 | 828 | **1628** |
 
-We created the model using fastai libraries that use Pytorch. Fastai allows the creation and testing of neural network models fastly
+We created the model using [fastai2](https://docs.fast.ai/) libraries that use Pytorch. Fastai allows the creation and testing of neural network models fastly
 because it abstracts various complexities from Pytorch. The definition of the neural network model is done in the creation of the dataloader, as shown below:
 
 ```python
   dls_train = ImageDataLoaders.from_df(pd_train, path=path,valid_col='is_valid', seed=42,label_col=1)
   learn = cnn_learner(dls_train, resnet34, metrics=error_rate)
 ```
-Other available models can be used or can be found [here](https://github.com/fastai/fastai2/blob/master/fastai2/vision/models/__init__.py).
+Other available fastai models can be used or can be found [here](https://github.com/fastai/fastai2/blob/master/fastai2/vision/models/__init__.py).
 
 ## 4. RESULTS
 
@@ -128,8 +128,8 @@ The following table contains the classification results after adding ghosting ef
 
 ## 5 References
 
-[1] Using a Saliency-Driven Convolutional Neural Network Framework for Brain Tumor Detection
-[2] “Multimodal brain tumor segmentation challenge 2020: Data,” https://www.med.upenn.edu/cbica/brats2020/data.html,
+1. Using a Saliency-Driven Convolutional Neural Network Framework for Brain Tumor Detection
+2. “Multimodal brain tumor segmentation challenge 2020: Data,” https://www.med.upenn.edu/cbica/brats2020/data.html,
 accessed: 2022-01-01.
 
 
