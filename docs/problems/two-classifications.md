@@ -69,7 +69,7 @@ The results for classifying the existence or not of a tumor are given by the tab
 
 ![CM_original_images](https://user-images.githubusercontent.com/43020938/154949534-c08ef5a1-de39-42b3-8aea-6e8b46fae8f4.png)
 
-In Figure [2], the heatmap of an image sample indicates the most discriminative parts used by the resnet18 for classification. The areas with red color were the ones that had the greatest weight in the network decision and the areas closest to blue were the least significant regions.
+In Figure [2], the heatmap of an image sample indicates the most discriminative parts used by the resnet34 for classification. The areas with red color were the ones that had the greatest weight in the network decision and the areas closest to blue were the least significant regions.
 
 ![Heatmap_original_image](https://user-images.githubusercontent.com/43020938/154948876-aba9e571-3df8-4ed2-93fd-8a2f7c1189cd.png)
 
