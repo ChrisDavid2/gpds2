@@ -44,11 +44,10 @@ To identify if an image has a tumor, we used a CNN-based classification system. 
 We created the model using fastai libraries that use Pytorch. Fastai allows the creation and testing of neural network models fastly
 because it abstracts various complexities from Pytorch. The definition of the neural network model is done in the creation of the dataloader, as shown below:
 
-	```
+```python
   dls_train = ImageDataLoaders.from_df(pd_train, path=path,valid_col='is_valid', seed=42,label_col=1)
   learn = cnn_learner(dls_train, resnet34, metrics=error_rate)
-
-	```
+```
 
 ## 4. RESULTS
 
