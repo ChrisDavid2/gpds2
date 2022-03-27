@@ -48,6 +48,7 @@ because it abstracts various complexities from Pytorch. The definition of the ne
   dls_train = ImageDataLoaders.from_df(pd_train, path=path,valid_col='is_valid', seed=42,label_col=1)
   learn = cnn_learner(dls_train, resnet34, metrics=error_rate)
 ```
+Other available models can be used or can be found [here](https://github.com/fastai/fastai2/blob/master/fastai2/vision/models/__init__.py).
 
 ## 4. RESULTS
 
@@ -56,7 +57,7 @@ gaussian noise, blurring, ringing, ghosting and contrast. For each type of artif
 from 1 to 20. The level 1 is the smoothest and level 20 is the most severe. Then we classified the test images with each of the degraded levels. 
 The model previously trained with non-degraded images and the classification results (accuracy, precision, f1_score and recall) 
 are shown in the following sections. The PSNR and MSE values of each degradation level correspond to the average of the MSE and PSNR values
-of each degraded image in the test set.
+of each degraded image in the testset. The degraded test images can be found [here](https://drive.google.com/drive/u/0/folders/1EXKXsPn5fSyOsk54ZZdLQjrFKNLO-Vjb).
 
 ### 4.1 Original Images
 The results for classifying the existence or not of a tumor are given by the table and by the confusion matrix, Figure [1], shown below:
@@ -68,7 +69,7 @@ The results for classifying the existence or not of a tumor are given by the tab
 
 ![CM_original_images](https://user-images.githubusercontent.com/43020938/154949534-c08ef5a1-de39-42b3-8aea-6e8b46fae8f4.png)
 
- In Figure [2], the heatmap of an image sample indicates the most discriminative parts used by the resnet18 for classification. The areas with red color were the ones that had the greatest weight in the network decision and the areas closest to blue were the least significant regions.
+In Figure [2], the heatmap of an image sample indicates the most discriminative parts used by the resnet18 for classification. The areas with red color were the ones that had the greatest weight in the network decision and the areas closest to blue were the least significant regions.
 
 ![Heatmap_original_image](https://user-images.githubusercontent.com/43020938/154948876-aba9e571-3df8-4ed2-93fd-8a2f7c1189cd.png)
 
@@ -124,8 +125,6 @@ The following table contains the classification results after adding ghosting ef
 ![Ghosting_Results](https://user-images.githubusercontent.com/43020938/156935603-8572b22b-ffd8-4338-a0e2-cb81b870d304.PNG)
 
 ![Ghost_MSE_Accuracy](https://user-images.githubusercontent.com/43020938/156935616-45d21212-8546-4603-81e7-b7733ea2c538.png)
-
-
 
 ## 5 References
 
